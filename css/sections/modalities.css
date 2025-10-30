@@ -1,0 +1,85 @@
+/* ===== SECTION MODALIDADES ===== */
+#modalities {
+    padding: 10px 0;
+  color: #fff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+#modalities .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#modalities h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+#modalities p {
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* ===== GRID DE MODALIDADES ===== */
+.modalities-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap; /* mantém o layout bonito em telas menores */
+}
+
+/* ===== CARD ===== */
+.modalities-card {
+  background: linear-gradient(145deg, #1a1a1a, #111);
+  border: 1px solid #222;
+  border-radius: 20px;
+  overflow: hidden;
+  flex: 1 1 250px;
+  max-width: 270px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modalities-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 1px 5px 10px rgba(255, 0, 0, 0.374);
+}
+
+.modalities-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid #e60000;
+}
+
+.modalities-card h3 {
+  margin: 20px 0 10px;
+  font-size: 1.3rem;
+  color: #e60000;
+  letter-spacing: 1px;
+}
+
+.modalities-card p {
+  padding: 0 20px 25px;
+  color: #ddd;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .modalities-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modalities-card {
+    max-width: 90%;
+  }
+}

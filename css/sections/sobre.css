@@ -1,0 +1,96 @@
+/* --------------------------------------------------------------------------
+   5. Seção Sobre
+   -------------------------------------------------------------------------- */
+
+/* A. SOBRE SECTION */
+#sobre {
+    background-color: #0e0e0e; 
+}
+#sobre .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+#sobre .text-content { 
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+#sobre h2 {
+    font-size: 2.5em;
+    color: #ff0000;
+    margin-bottom: -10px;
+
+}
+#sobre p {
+  margin-bottom: -20px;
+}
+/* Carrossel de Rolagem Contínua do Ambiente */
+#sobre .carousel-scroll-container {
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+    margin-bottom: -20px;
+}
+#sobre .carousel-track-scroll {
+    display: inline-block;
+    animation: scroll 30s linear infinite;
+}
+#sobre .carousel-scroll-container:hover .carousel-track-scroll {
+    animation-play-state: paused;
+}
+#sobre .carousel-slide-scroll {
+    display: inline-block;
+    width: 300px; 
+    height: 350px;
+    object-fit: cover;
+    margin: 0 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframes para a animação de rolagem */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); 
+    }
+}
+/* Botão de Ação do Whatsapp */
+#sobre .action .btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  
+  background: linear-gradient(145deg, #00a315, #007a0c);
+  color: #fff;
+  padding: 12px 50px;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 5px 12px rgba(0, 140, 12, 0.3);
+  cursor: pointer;
+  
+  transition: 
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.3s ease;
+}
+#sobre .action .btn-cta:hover {
+  background: linear-gradient(145deg, #00b618, #009b10);
+  box-shadow: 0 8px 20px rgba(0, 140, 12, 0.45);
+  transform: translateY(-3px);
+}
+#sobre .action .btn-cta:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 8px rgba(0, 140, 12, 0.3);
+}

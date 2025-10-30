@@ -1,0 +1,366 @@
+@import url(sections/sobre.css);
+@import url(sections/modalities.css);
+@import url(sections/benefits.css);
+
+/* --------------------------------------------------------------------------
+   1. Reset e Base
+   -------------------------------------------------------------------------- */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:#0e0e0e;
+  color:#fff;
+  font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
+}
+
+/* --------------------------------------------------------------------------
+   2. Layout Global
+   -------------------------------------------------------------------------- */
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:2rem;
+}
+
+/* Botões de Ação Comuns */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  background: linear-gradient(145deg, #ff0000, #630000);
+  color: #fff;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 5px 12px rgba(140, 0, 0, 0.3);
+  cursor: pointer;
+  
+  transition: 
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.3s ease;
+}
+
+
+/* --------------------------------------------------------------------------
+   3. Navegação (Header)
+   -------------------------------------------------------------------------- */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  backdrop-filter: blur(5px);
+  background: #0e0e0e;
+  border-bottom: var(--header-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  height: 100px;
+  padding: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height: 70px;
+  padding: 0 2rem;
+}
+
+/* Logo */
+.logo{
+  display:flex;
+  align-items:center;
+  gap: 1rem;
+  text-decoration:none;
+  color:#fff;
+  font-weight:700;
+}
+.logo img {
+    height: 50px;
+    width: 0 auto;
+}
+.logo span{
+    font-family:'Montserrat',sans-serif;
+    letter-spacing: 0.5px;
+    font-size: 1.2rem;
+}
+
+/* Menu de Navegação */
+.nav a{
+    color:#bdbdbd;
+    text-decoration:none;
+    padding: 0.3rem 0;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    position: relative;
+}
+.nav {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: auto;
+    margin-right: 2rem;
+}
+.nav a:hover{
+    color:#fff;
+}
+/* Efeito de Destaque Simples no Hover */
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #e53935;
+    transition: width 0.2s ease;
+}
+.nav a:hover::after {
+    width: 100%;
+}
+/* Nav Toggle (Ícone de Menu Hambúrguer) */
+.nav-toggle{
+    display:none;
+    background:none;
+    border:0;
+    color:#fff;
+    font-size:1.8rem;
+    cursor:pointer;
+}
+
+
+/* --------------------------------------------------------------------------
+   4. Seção Principal (Main Content)
+   -------------------------------------------------------------------------- */
+
+/* A. HERO SECTION */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+.hero-background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center; 
+  z-index: 0; 
+}
+.hero-overlay { /* Escurecimento diagonal */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(110deg, rgba(0, 0, 0, 0.95) 55%, rgba(0, 0, 0, 0.2) 100%);
+  z-index: 1;
+}
+.container.hero-content { /* Conteúdo do Hero */
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding-left: 20%;
+  padding-right: 0;
+}
+.hero-text {
+  flex: 1;
+  max-width: 520px;
+  color: #fff;
+}
+.hero-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.hero-logo {
+  width: 60px;
+  height: auto;
+}
+.hero-divider { /* Traço separador */
+  display: inline-block;
+  width: 2px;
+  height: 45px;
+  background: #c62828;
+}
+.hero-info h3 { /* Letreiro */
+  font-size: 17px;
+  color: #ccc;
+  margin: 0;
+}
+.hero-prof {
+  color: #d32f2f;
+  font-weight: bold;
+  margin: 0;
+}
+.hero-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 15px 0;
+  color: #fff;
+}
+.hero-description {
+  color: #ddd;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.hero-actions .btn-cta {
+  padding: 12px 30px;
+  border: none;
+
+  position: relative;
+  overflow: hidden;
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+.hero-actions .btn-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shine 4s infinite;
+}
+@keyframes shine { /* ANIMAÇÕES DENTRO DO BTN-CTA NO HERO*/
+  0% { left: -75%; }
+  50% { left: 125%; }
+  100% { left: 125%; }
+}
+
+.hero-actions .btn-cta:hover { /* EFEITO DE SALTITAR E SOMEBREADO NO BTN-CTA HERO*/
+  transform: scale(1.08);
+  box-shadow: 0 3px 12px rgba(255, 0, 0, 0.6);
+}
+
+
+
+/*SEÇÃO DE MAPA */
+.map-and-info{display:grid; grid-template-columns:1fr 1fr; gap:2.5rem;align-items:start}
+.map iframe{border-radius:8px}
+
+/*SEÇÃO DE FORMULÁRIO */
+.form{max-width:720px;margin-top:1rem;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:1rem;border-radius:10px}
+.form-row{display:flex;flex-direction:column;margin-bottom:.9rem}
+.form-row label{font-size:.9rem;color:#bdbdbd; margin-bottom:.35rem}
+.form-row input,.form-row textarea,.form-row select{padding:.7rem;border-radius:8px;border:1px solid rgba(255,255,255,0.05);background:transparent;color:#fff;outline:none}
+.form-row button{align-self:flex-start;padding:.7rem 1.1rem;border-radius:8px;border:0;background:#e53935; color:#fff;cursor:pointer}
+
+
+/* --------------------------------------------------------------------------
+   5. Rodapé (Footer)
+   -------------------------------------------------------------------------- */
+.footer{border-top:1px solid rgba(255,255,255,0.03);padding:1.6rem 0;margin-top:2rem}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.footer-nav a, .socials a{
+    color:#bdbdbd;
+    text-decoration:none;
+}
+.footer-nav a{margin-right:1rem;}
+.socials a{margin-left:.6rem;}
+
+/* --------------------------------------------------------------------------
+   6. Elementos Adicionais
+   -------------------------------------------------------------------------- */
+
+/* Botão Voltar ao Topo */
+.back-to-top{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    background:#e53935;
+    color:#fff;
+    border:0;
+    padding:.6rem .7rem;
+    border-radius:50%;
+    display:none;
+    cursor:pointer;
+    font-weight:700; 
+    height: 50px; 
+    width: 50px;
+}
+
+/* --------------------------------------------------------------------------
+   7. Responsividade (Media Queries)
+   -------------------------------------------------------------------------- */
+
+/* Desktop Médio / Tablet Horizontal */
+@media (max-width: 950px) {
+  .container.hero-content {
+    flex-direction: column;
+    padding: 60px 20px;
+  }
+  .hero-header {
+    justify-content: center;
+  }
+  .hero-divider {
+    height: 35px;
+  }
+  .hero-text {
+    text-align: center;
+    max-width: 100%;
+  }
+  .hero-title {
+    font-size: 34px;
+  }
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+  }
+}
+
+/* Tablet Vertical / Mobile Grande */
+@media (max-width:900px){
+  /* Navegação */
+  .nav, .btn-cta {
+      display: none;
+  }
+  .nav-toggle{
+      display:block;
+  }
+  
+  /* Layout */
+  .two-col, .map-and-info {
+      grid-template-columns:1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    #sobre .text-content {
+        margin-bottom: 20px;
+    }
+    #sobre .carousel-slide-scroll {
+        width: 250px;
+        height: 150px;
+    }
+}
