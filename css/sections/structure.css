@@ -1,0 +1,84 @@
+/* --------------------------------------------------------------------------
+   5. Seção Estrutura (Refatorado a partir de "Sobre")
+   -------------------------------------------------------------------------- */
+#structure .section__title {
+    color: red;
+}
+
+/* C. CARROSSEL DE ROLAGEM CONTÍNUA */
+.structure__carousel-scroll {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 20px 0;
+}
+
+.structure__carousel-scroll-track {
+  display: inline-block;
+  animation: scroll 30s linear infinite;
+}
+
+.structure__carousel-scroll:hover .structure__carousel-scroll-track {
+  animation-play-state: paused;
+}
+
+.structure__carousel-slide {
+  display: inline-block;
+  width: 300px; 
+  height: 350px;
+  object-fit: cover; 
+  margin: 0 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* D. ANIMAÇÃO DO CARROSSEL */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); 
+  }
+}
+
+/* E. BOTÃO DE AÇÃO (WHATSAPP) */
+#structure .structure__action {
+  margin-top: 20px; 
+}
+
+#structure .btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  
+  background: linear-gradient(145deg, #00a315, #007a0c);
+  color: #fff;
+  padding: 12px 50px;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 5px 12px rgba(0, 140, 12, 0.3);
+  cursor: pointer;
+  
+  transition: 
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.3s ease;
+}
+
+#structure .btn-cta:hover {
+  background: linear-gradient(145deg, #00b618, #009b10);
+  box-shadow: 0 8px 20px rgba(0, 140, 12, 0.45);
+  transform: translateY(-3px);
+}
+
+#structure .btn-cta:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 8px rgba(0, 140, 12, 0.3);
+}

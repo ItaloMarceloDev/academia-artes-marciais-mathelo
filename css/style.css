@@ -1,6 +1,7 @@
-@import url(sections/sobre.css);
+@import url(sections/structure.css);
 @import url(sections/modalities.css);
 @import url(sections/benefits.css);
+@import url(sections/location.css);
 
 /* --------------------------------------------------------------------------
    1. Reset e Base
@@ -17,13 +18,57 @@ body{
   line-height:1.6;
 }
 
-/* --------------------------------------------------------------------------
-   2. Layout Global
-   -------------------------------------------------------------------------- */
-.container{
-  max-width:1200px;
-  margin:0 auto;
-  padding:2rem;
+/* ==========================================================================
+   ESTRUTURA BASE DE SEÇÃO (Genérica)
+   ========================================================================== */
+.section {
+  padding: 40px 0;
+  margin-top: 100px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0;
+  background-color: #0e0e0e;
+  color: #fff;
+}
+
+/* Ajuste para telas maiores */
+@media (min-width: 992px) {
+  .section {
+    padding: 20px 0;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section__text-content {
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+}
+
+.section__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .section__title {
+    font-size: 2rem;
+  }
+}
+
+.section__description {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.5;
 }
 
 /* Botões de Ação Comuns */
@@ -260,12 +305,6 @@ body{
   transform: scale(1.08);
   box-shadow: 0 3px 12px rgba(255, 0, 0, 0.6);
 }
-
-
-
-/*SEÇÃO DE MAPA */
-.map-and-info{display:grid; grid-template-columns:1fr 1fr; gap:2.5rem;align-items:start}
-.map iframe{border-radius:8px}
 
 /*SEÇÃO DE FORMULÁRIO */
 .form{max-width:720px;margin-top:1rem;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:1rem;border-radius:10px}

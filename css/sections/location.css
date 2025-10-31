@@ -1,0 +1,18 @@
+/*SEÇÃO DE MAPA */
+#location .section__text-content {
+    text-align: left;
+}
+
+.map-and-info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3.0rem;
+    align-items:start;
+    text-align: left;
+}
+
+.map iframe{
+    border-radius:8px;
+    height: 400px;
+    width: 800px;
+}

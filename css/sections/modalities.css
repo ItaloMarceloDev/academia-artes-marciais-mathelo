@@ -1,33 +1,14 @@
 /* ===== SECTION MODALIDADES ===== */
-#modalities {
-    padding: 10px 0;
-  color: #fff;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
+#modalities .section__text-content {
+  text-align: left;
 }
 
-#modalities .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-#modalities h2 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  letter-spacing: 2px;
-}
-
-#modalities p {
-  max-width: 700px;
-  margin: 0 auto 50px auto;
-  font-size: 1rem;
-  color: #ccc;
-  line-height: 1.6;
+#modalities .section__description {
+    max-width: 800px;
 }
 
 /* ===== GRID DE MODALIDADES ===== */
-.modalities-grid {
+.modalities__list {
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -36,7 +17,7 @@
 }
 
 /* ===== CARD ===== */
-.modalities-card {
+.modalities__card {
   background: linear-gradient(145deg, #1a1a1a, #111);
   border: 1px solid #222;
   border-radius: 20px;
@@ -46,26 +27,25 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.modalities-card:hover {
+.modalities__card:hover {
   transform: translateY(-10px);
-  box-shadow: 1px 5px 10px rgba(255, 0, 0, 0.374);
 }
 
-.modalities-img {
+.modalities__card-img {
   width: 100%;
   height: 180px;
   object-fit: cover;
   border-bottom: 2px solid #e60000;
 }
 
-.modalities-card h3 {
+.modalities__card-title {
   margin: 20px 0 10px;
   font-size: 1.3rem;
   color: #e60000;
   letter-spacing: 1px;
 }
 
-.modalities-card p {
+.modalities__card-description {
   padding: 0 20px 25px;
   color: #ddd;
   font-size: 0.95rem;
@@ -74,12 +54,12 @@
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
-  .modalities-grid {
+  .modalities__list {
     flex-direction: column;
     align-items: center;
   }
 
-  .modalities-card {
+  .modalities__card {
     max-width: 90%;
   }
 }
